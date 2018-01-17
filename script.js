@@ -1,45 +1,45 @@
 var Counter = React.createClass({
-  getInitialState() {
+  getInitialState: function() {
     // console.log('Metoda - getInitialState okreslamy poczatkowy stan naszego komponentu');
     return {
       counter: 0
     };
   },
 
-  increment() {
+  increment: function() {
     this.setState({
       counter: this.state.counter + 1
     });
   },
-  decrement() {
+  decrement: function() {
     this.setState({
       counter: this.state.counter - 1
     });
   },
 
-  componentWillMount() {
+  componentWillMount: function() {
     console.log('Metoda - componentWillMount wywołuje się przed metoda render - montujcej komponent w drzewie DOM');
   },
-  componentDidMount() {
+  componentDidMount: function() {
     console.log('Metoda - componentDidMount wywołuje się po zakończeniu metody reneder - w tym momencie nasz komponent jest już zamontowany w drzewie DOM - możemy manipulować drzewem DOM');
   },
-  componentWillReceiveProps() {
+  componentWillReceiveProps: function() {
     console.log('Metoda - componentWillReceiveProps zostanie wywołana jeżeli komponent otrzyma nowe własciwosci - pozwala aktualizować stan na podstawie nadchodzcych własciwosci');
   },
-  shouldComponentUpdate() {
+  shouldComponentUpdate: function() {
     console.log('Metoda - shouldComponentUpdate uruchamia się przed metoda render i sprawdza czy zaszły zmiany i czy trzeba przerysować komponent');
     return true;
   },
-  componentWillUpdate() {
+  componentWillUpdate: function() {
     console.log('Metoda - componentWillUpdate zostanie uruchomiona, kiedy metoda - shouldComponentUpdate zwróci wartosc true - komponent przygotowany do aktualizacji');
   },
-  componentDidUpdate() {
+  componentDidUpdate: function() {
     console.log('Metoda - componentDidUpdate zostanie uruchomiona, po metodzie render - możemy manipulować drzewem DOM');
   },
-  componentWillUnmount() {
+  componentWillUnmount: function() {
     console.log('Metoda - componentWillUnmount, służy do odmontowania komponentu');
   },
-  render() {
+  render: function() {
     return React.createElement('div', {},
       React.createElement('button', {onClick: this.increment}, 'Increment'),
       React.createElement('button', {onClick: this.decrement}, 'Decrement'),
